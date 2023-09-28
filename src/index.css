@@ -22,6 +22,24 @@ header{
   }
 }
 
+@media(max-width:1210px){
+  .all-products{
+    grid-template-columns: repeat(3,1fr);
+  }
+}
+
+@media(max-width:995px){
+  .all-products{
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+
+@media(max-width:655px){
+  .all-products{
+    grid-template-columns: 1fr;
+  }
+}
+
 .container div:first-child {
   display: flex;
   justify-content: space-between;
