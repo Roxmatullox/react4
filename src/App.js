@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/header/header";
+import Footer from "./components/footer/footer";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+
+import All from "./pages/all";
+import Electronics from "./pages/electronics";
+import Mens from "./pages/mens";
+import Womens from "./pages/womens";
+import Jewelery from "./pages/jewelery";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <BrowserRouter>
+      <Header />
+        <Routes >
+          <Route path="/" element={<All />} />
+          <Route path="/electronics" element={<Electronics />} />
+          <Route path="/jewelery" element={<Jewelery />} />
+          <Route path="/mens" element={<Mens />} />
+          <Route path="/womens" element={<Womens />} />
+        </Routes>
+      <Footer />
+      </BrowserRouter>
   );
 }
 
